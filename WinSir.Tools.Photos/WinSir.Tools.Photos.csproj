@@ -42,8 +42,12 @@
   <ItemGroup>
     <Compile Include="ExifManager.cs" />
     <Compile Include="ClassifiedByDate.cs" />
-    <Compile Include="IMotivation.cs" />
-    <Compile Include="MotivationBase.cs" />
+    <Compile Include="Motivations\FileMotivation\FileCopyMotivation.cs" />
+    <Compile Include="Motivations\FileMotivation\FileMotivationBase.cs" />
+    <Compile Include="Motivations\FolderCopyMotivation.cs" />
+    <Compile Include="Motivations\FolderMotivation\FolderMotivationBase.cs" />
+    <Compile Include="Motivations\IMotivation.cs" />
+    <Compile Include="Motivations\MotivationContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenamedByExif.cs" />
   </ItemGroup>
