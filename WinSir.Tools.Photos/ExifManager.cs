@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ExifWorks
+namespace WinSir.Tools.Photos
 {
     // 
     // Utility class for working with EXIF data in images. Provides abstraction

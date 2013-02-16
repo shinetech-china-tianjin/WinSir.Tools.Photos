@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="ExifManager.cs" />
     <Compile Include="ClassifiedByDate.cs" />
+    <Compile Include="IMotivation.cs" />
+    <Compile Include="MotivationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenamedByExif.cs" />
   </ItemGroup>
