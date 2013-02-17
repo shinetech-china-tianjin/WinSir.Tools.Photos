@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBasicIO.cs" />
+    <Compile Include="IDirectoryIO.cs" />
+    <Compile Include="IFileIO.cs" />
     <Compile Include="Migration\ExifManager.cs" />
     <Compile Include="Migration\ClassifiedByDate.cs" />
     <Compile Include="IOExtensioin.cs" />
