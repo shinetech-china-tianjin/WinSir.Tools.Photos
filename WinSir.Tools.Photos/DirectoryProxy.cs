@@ -14,5 +14,10 @@ namespace WinSir.Tools.Photos
         public IBasicIO Rename(string newName) {
             throw new NotImplementedException();
         }
+
+
+        public string Name {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace WinSir.Tools.Photos
     public interface IBasicIO
     {
         IBasicIO Rename(string newName);
+
+        string Name { get; }
     }
 }

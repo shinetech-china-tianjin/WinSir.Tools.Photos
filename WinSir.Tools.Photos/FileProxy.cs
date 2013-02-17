@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -11,10 +12,21 @@ namespace WinSir.Tools.Photos
 
         internal FileProxy(string filePath) {
             _filePath = filePath;
+            InitializeFile(filePath);
+        }
+
+        private void InitializeFile(string filePath) {
+            Name = Path.GetFileName(filePath);
         }
 
         public IBasicIO Rename(string newName) {
-            throw new NotImplementedException();
+            IOHelper.FileRename(_filePath, newName);
+
+            var baseDirectory = Path.GetDirectoryName(_filePath);
+            var newFilePath = Path.Combine(baseDirectory, newName);
+            return new FileProxy(newFilePath);
         }
+
+        public string Name { get; private set; }
     }
 }
