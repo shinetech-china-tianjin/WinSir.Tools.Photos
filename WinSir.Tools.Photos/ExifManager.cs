@@ -1,27 +1,28 @@
-﻿using System;
+﻿// 
+// Utility class for working with EXIF data in images. Provides abstraction
+// for most common data and generic utilities for work with all other. 
+// 
+// 
+// Copyright (c) Michal A. Valášek - Altair Communications, 2003-2005
+// Copmany: http://software.altaircom.net, E-mail: support@altaircom.net
+// Private: http://www.rider.cz, E-mail: rider@rider.cz
+// This is free software licensed under GNU Lesser General Public License
+// 
+// 
+// [altair] 10.09.2003 Created
+// [altair] 12.06.2004 Added capability to write EXIF data
+// [altair] 11.07.2004 Added option to change encoding
+// [altair] 04.09.2005 Changed source of Width and Height properties from EXIF to image
+// [altair] 05.09.2005 Code clean-up and minor changes
+// [marco.ridoni@virgilio.it] 02-11-2006 C# translation
+// 
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    // 
-    // Utility class for working with EXIF data in images. Provides abstraction
-    // for most common data and generic utilities for work with all other. 
-    // 
-    // 
-    // Copyright (c) Michal A. Valášek - Altair Communications, 2003-2005
-    // Copmany: http://software.altaircom.net, E-mail: support@altaircom.net
-    // Private: http://www.rider.cz, E-mail: rider@rider.cz
-    // This is free software licensed under GNU Lesser General Public License
-    // 
-    // 
-    // [altair] 10.09.2003 Created
-    // [altair] 12.06.2004 Added capability to write EXIF data
-    // [altair] 11.07.2004 Added option to change encoding
-    // [altair] 04.09.2005 Changed source of Width and Height properties from EXIF to image
-    // [altair] 05.09.2005 Code clean-up and minor changes
-    // [marco.ridoni@virgilio.it] 02-11-2006 C# translation
-    // 
     public class ExifManager : IDisposable
     {
 
@@ -30,14 +31,9 @@ namespace WinSir.Tools.Photos
 
         #region Type declarations
 
-        // 
-        // Contains possible values of EXIF tag names (ID)
-        // 
-        // See GdiPlusImaging.h
-        // 
-        // [altair] 10.09.2003 Created
-        // 
-
+        /// <summary>
+        /// Contains possible values of EXIF tag names (ID)
+        /// </summary>
         public enum TagNames : int
         {
             ExifIFD = 0x8769,
@@ -256,15 +252,9 @@ namespace WinSir.Tools.Photos
             GpsDestDist = 0x1A
         }
 
-
-        // 
-        // Real position of 0th row and column of picture
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
-
+        /// <summary>
+        /// Real position of 0th row and column of picture
+        /// </summary>
         public enum Orientations
         {
             TopLeft = 1,
@@ -277,15 +267,9 @@ namespace WinSir.Tools.Photos
             LftBottom = 8
         }
 
-
-        // 
-        // Exposure programs
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
-
+        /// <summary>
+        /// Exposure programsExposure programs
+        /// </summary>
         public enum ExposurePrograms
         {
             Manual = 1,
@@ -298,15 +282,9 @@ namespace WinSir.Tools.Photos
             Landscape = 8,
         }
 
-
-        // 
-        // Exposure metering modes
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
-
+        /// <summary>
+        /// Exposure metering modes
+        /// </summary>
         public enum ExposureMeteringModes
         {
             Unknown = 0,
@@ -319,15 +297,9 @@ namespace WinSir.Tools.Photos
             Other = 255
         }
 
-
-        // 
-        // Flash activity modes
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
-
+        /// <summary>
+        /// Flash activity modes
+        /// </summary>
         public enum FlashModes
         {
             NotFired = 0,
@@ -336,15 +308,9 @@ namespace WinSir.Tools.Photos
             FiredAndStrobeReturned = 7,
         }
 
-
-        // 
-        // Possible light sources (white balance)
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
-
+        /// <summary>
+        /// Possible light sources (white balance)
+        /// </summary>
         public enum LightSources
         {
             Unknown = 0,
@@ -361,14 +327,9 @@ namespace WinSir.Tools.Photos
             Other = 255
         }
 
-
-        // 
-        // EXIF data types
-        // 
-        // 
-        // 
-        // [altair] 12.6.2004 Created
-        // 
+        /// <summary>
+        /// EXIF data types
+        /// </summary>
         public enum ExifDataTypes : short
         {
             UnsignedByte = 1,
@@ -385,30 +346,20 @@ namespace WinSir.Tools.Photos
             DoubleFloat = 12
         }
 
-
-        // 
-        // Represents rational which is type of some Exif properties
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
+        /// <summary>
+        /// Represents rational which is type of some Exif properties
+        /// </summary>
         public struct Rational
         {
             public Int32 Numerator;
             public Int32 Denominator;
 
-
-            // 
-            // Converts rational to string representation
-            // 
-            // Optional, default "/". String to be used as delimiter of components.
-            // String representation of the rational.
-            // 
-            // 
-            // [altair] 10.09.2003 Created
-            // 
-
+            /// <summary>
+            /// Converts rational to string representation. 
+            /// Optional, default "/". String to be used as delimiter of components.
+            /// String representation of the rational.
+            /// </summary>
+            /// <returns></returns>
             public override string ToString()
             {
                 return ToString("/");
@@ -419,15 +370,11 @@ namespace WinSir.Tools.Photos
                 return Numerator + "/" + Denominator;
             }
 
-            // 
-            // Converts rational to double precision real number
-            // 
-            // The rational as double precision real number.
-            // 
-            // 
-            // [altair] 10.09.2003 Created
-            // 
-
+            /// <summary>
+            /// Converts rational to double precision real number
+            /// The rational as double precision real number.
+            /// </summary>
+            /// <returns></returns>
             public double ToDouble()
             {
                 return (double)Numerator / Denominator;
@@ -436,14 +383,6 @@ namespace WinSir.Tools.Photos
 
         #endregion
 
-        // 
-        // Initializes new instance of this class.
-        // 
-        // Bitmap to read exif information from
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
         public ExifManager(System.Drawing.Bitmap Bitmap)
         {
             if (Bitmap == null)
@@ -451,28 +390,11 @@ namespace WinSir.Tools.Photos
             this._Image = Bitmap;
         }
 
-        // 
-        // Initializes new instance of this class.
-        // 
-        // Name of file to be loaded
-        // 
-        // 
-        // [altair] 13.06.2004 Created
-        // 
         public ExifManager(string FileName)
         {
             this._Image = (System.Drawing.Bitmap)System.Drawing.Bitmap.FromFile(FileName);
         }
 
-        // 
-        // Get or set encoding used for string metadata
-        // 
-        // Encoding used for string metadata
-        // Default encoding is UTF-8
-        // 
-        // [altair] 11.07.2004 Created
-        // [altair] 05.09.2005 Changed from shared to instance member
-        // 
         public System.Text.Encoding Encoding
         {
             get
@@ -487,27 +409,11 @@ namespace WinSir.Tools.Photos
             }
         }
 
-        // 
-        // Returns copy of bitmap this instance is working on
-        // 
-        // 
-        // 
-        // 
-        // [altair] 13.06.2004 Created
-        // 
         public System.Drawing.Bitmap GetBitmap()
         {
             return (System.Drawing.Bitmap)this._Image.Clone();
         }
 
-        // 
-        // Returns all available data in formatted string form
-        // 
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
         public override string ToString()
         {
             System.Text.StringBuilder SB = new StringBuilder();
@@ -1376,15 +1282,11 @@ namespace WinSir.Tools.Photos
 
         #endregion
 
-        #region " IDisposable implementation "
+        #region IDisposable implementation
 
-        // 
-        // Disposes unmanaged resources of this class
-        // 
-        // 
-        // 
-        // [altair] 10.09.2003 Created
-        // 
+        /// <summary>
+        /// Disposes unmanaged resources of this class
+        /// </summary>
         public void Dispose()
         {
             this._Image.Dispose();
