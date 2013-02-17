@@ -5,7 +5,8 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    internal interface IDirectoryIO : IBasicIO
+    public interface IDirectoryIO : IBasicIO
     {
+        IDirectoryIO LetDirectoryFiles(Action<IFileIO> command);
     }
 }

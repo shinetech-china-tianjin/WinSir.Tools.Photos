@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectoryProxy.cs" />
+    <Compile Include="FileProxy.cs" />
     <Compile Include="IBasicIO.cs" />
     <Compile Include="IDirectoryIO.cs" />
     <Compile Include="IFileIO.cs" />

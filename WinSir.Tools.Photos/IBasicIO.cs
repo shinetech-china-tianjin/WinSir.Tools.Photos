@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    internal interface IBasicIO
+    public interface IBasicIO
     {
         IBasicIO Rename(string newName);
     }
