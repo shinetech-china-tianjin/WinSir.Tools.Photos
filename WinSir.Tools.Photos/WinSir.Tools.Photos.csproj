@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExifManager.cs" />
-    <Compile Include="ClassifiedByDate.cs" />
+    <Compile Include="Migration\ExifManager.cs" />
+    <Compile Include="Migration\ClassifiedByDate.cs" />
+    <Compile Include="IOExtensioin.cs" />
+    <Compile Include="IOHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RenamedByExif.cs" />
+    <Compile Include="Migration\RenamedByExif.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
