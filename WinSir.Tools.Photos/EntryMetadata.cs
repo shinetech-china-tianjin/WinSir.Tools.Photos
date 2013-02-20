@@ -5,10 +5,7 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public interface IBasicIO
+    public class EntryMetadata
     {
-        IBasicIO Rename(string newName);
-
-        string Name { get; }
     }
 }

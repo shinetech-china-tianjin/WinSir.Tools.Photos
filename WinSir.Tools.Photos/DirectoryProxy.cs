@@ -5,18 +5,27 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public class DirectoryProxy : IDirectoryIO
+    public class DirectoryProxy : IDirectory
     {
-        public IDirectoryIO LetDirectoryFiles(Action<IFileIO> command) {
+        public IDirectory LetDirectoryFiles(Action<IFile> command) {
             throw new NotImplementedException();
         }
 
-        public IBasicIO Rename(string newName) {
+        public IFileSystemEntry Rename(string newName) {
             throw new NotImplementedException();
         }
 
 
-        public string Name {
+        public string EntryName {
+            get { throw new NotImplementedException(); }
+        }
+
+
+        public string EntryPath {
+            get { throw new NotImplementedException(); }
+        }
+
+        public EntryMetadata Metadata {
             get { throw new NotImplementedException(); }
         }
     }

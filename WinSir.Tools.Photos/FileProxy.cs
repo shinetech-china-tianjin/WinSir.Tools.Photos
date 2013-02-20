@@ -6,7 +6,7 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public class FileProxy : IFileIO
+    public class FileProxy : IFile
     {
         private readonly string _filePath;
 
@@ -16,10 +16,10 @@ namespace WinSir.Tools.Photos
         }
 
         private void InitializeFile(string filePath) {
-            Name = Path.GetFileName(filePath);
+            EntryName = Path.GetFileName(filePath);
         }
 
-        public IBasicIO Rename(string newName) {
+        public IFileSystemEntry Rename(string newName) {
             IOHelper.FileRename(_filePath, newName);
 
             var baseDirectory = Path.GetDirectoryName(_filePath);
@@ -27,6 +27,15 @@ namespace WinSir.Tools.Photos
             return new FileProxy(newFilePath);
         }
 
-        public string Name { get; private set; }
+        public string EntryName { get; private set; }
+
+
+        public string EntryPath {
+            get { throw new NotImplementedException(); }
+        }
+
+        public EntryMetadata Metadata {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

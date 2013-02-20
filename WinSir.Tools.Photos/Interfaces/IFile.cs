@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public interface IFileIO : IBasicIO
+    public interface IFile : IFileSystemEntry
     {
     }
 }

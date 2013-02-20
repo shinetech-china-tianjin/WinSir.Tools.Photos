@@ -16,7 +16,7 @@ namespace WinSir.Tools.Photos.Tests
 
                 var fileProxy = new FileProxy(fakeFile.FakeFile.FullName);
                 var newFileProxy = fileProxy.Rename(newFileName);
-                Assert.Equal(newFileName, newFileProxy.Name);
+                Assert.Equal(newFileName, newFileProxy.EntryName);
             }
         }
     }

@@ -41,10 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectoryProxy.cs" />
+    <Compile Include="EntryMetadata.cs" />
     <Compile Include="FileProxy.cs" />
-    <Compile Include="IBasicIO.cs" />
-    <Compile Include="IDirectoryIO.cs" />
-    <Compile Include="IFileIO.cs" />
+    <Compile Include="Interfaces\IFileSystemEntry.cs" />
+    <Compile Include="Interfaces\IDirectory.cs" />
+    <Compile Include="Interfaces\IFile.cs" />
     <Compile Include="Migration\ExifManager.cs" />
     <Compile Include="Migration\ClassifiedByDate.cs" />
     <Compile Include="IOExtensioin.cs" />
