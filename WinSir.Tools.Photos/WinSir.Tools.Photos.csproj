@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DirectoryProxy.cs" />
+    <Compile Include="DirectoryTruck.cs" />
     <Compile Include="EntryMetadata.cs" />
-    <Compile Include="FileProxy.cs" />
+    <Compile Include="FileTruck.cs" />
     <Compile Include="Interfaces\IFileSystemEntry.cs" />
     <Compile Include="Interfaces\IDirectory.cs" />
     <Compile Include="Interfaces\IFile.cs" />

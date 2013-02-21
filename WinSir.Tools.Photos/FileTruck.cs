@@ -6,11 +6,11 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public class FileProxy : IFile
+    public class FileTruck : IFile
     {
         private readonly string _filePath;
 
-        internal FileProxy(string filePath) {
+        internal FileTruck(string filePath) {
             _filePath = filePath;
             InitializeFile(filePath);
         }
@@ -24,7 +24,7 @@ namespace WinSir.Tools.Photos
 
             var baseDirectory = Path.GetDirectoryName(_filePath);
             var newFilePath = Path.Combine(baseDirectory, newName);
-            return new FileProxy(newFilePath);
+            return new FileTruck(newFilePath);
         }
 
         public string EntryName { get; private set; }

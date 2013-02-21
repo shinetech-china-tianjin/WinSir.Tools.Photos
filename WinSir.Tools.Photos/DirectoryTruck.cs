@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public class DirectoryProxy : IDirectory
+    public class DirectoryTruck : IDirectory
     {
         public IDirectory LetDirectoryFiles(Action<IFile> command) {
             throw new NotImplementedException();
