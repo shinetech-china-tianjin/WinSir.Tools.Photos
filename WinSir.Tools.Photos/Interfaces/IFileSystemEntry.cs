@@ -10,7 +10,7 @@ namespace WinSir.Tools.Photos
         IFileSystemEntry Rename(string newName);
 
         string EntryName { get; }
-        string EntryPath { get; }
+        Fluent.IO.Path EntryPath { get; }
 
         EntryMetadata Metadata { get; }
     }

@@ -30,7 +30,7 @@ namespace WinSir.Tools.Photos
         public string EntryName { get; private set; }
 
 
-        public string EntryPath {
+        public Fluent.IO.Path EntryPath {
             get { throw new NotImplementedException(); }
         }
 
