@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xunit>
+  <assemblies>
+    <assembly filename="WinSir.Tools.Photos.Tests\bin\Debug\WinSir.Tools.Photos.Tests.dll" shadow-copy="true">
+	    <output type="html" filename="WinSir.Tools.Photos.Tests.TestResult.html" />
+	</assembly>
+  </assemblies>
+</xunit>
