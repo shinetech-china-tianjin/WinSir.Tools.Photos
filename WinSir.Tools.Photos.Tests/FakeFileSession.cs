@@ -4,12 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace WinSir.Tools.Photos.Tests
 {
     public class FakeFileSession : IDisposable
     {
-        private const string TestDirectoryPath = @"c:\WinSir.Tools.Photos.Tests\";
+        private const string TestFileDirectoryName = "TestFiles";
+        private readonly string TestDirectoryPath = generateSessionFileLocation();
         private readonly string _sessionFileName;
         private string _sessionFilePath;
 
@@ -32,6 +34,13 @@ namespace WinSir.Tools.Photos.Tests
             }
 
             FakeFile = new FileInfo(_sessionFilePath);
+        }
+
+        private static string generateSessionFileLocation() {
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var testsDirectory = Path.Combine(baseDirectory, TestFileDirectoryName);
+
+            return testsDirectory;
         }
 
         public FileInfo FakeFile { get; private set; }
