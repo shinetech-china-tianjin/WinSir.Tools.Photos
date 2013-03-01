@@ -7,6 +7,10 @@ namespace WinSir.Tools.Photos
 {
     public interface IDirectory : IFileSystemEntry
     {
-        IDirectory LetDirectoryFiles(Action<IFile> command);
+		IFile Rename (string newName);
+		IDirectory MoveTo(Fluent.IO.Path newPath);
+
+		IEnumerable<IDirectory> Directories{ get; }
+		IEnumerable<IFile> Files{ get; }
     }
 }

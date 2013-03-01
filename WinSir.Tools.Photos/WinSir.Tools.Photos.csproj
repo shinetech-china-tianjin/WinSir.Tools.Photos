@@ -9,13 +9,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinSir.Tools.Photos</RootNamespace>
     <AssemblyName>WinSir.Tools.Photos</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -23,7 +24,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -50,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectoryTruck.cs" />
-    <Compile Include="EntryMetadata.cs" />
     <Compile Include="FileTruck.cs" />
     <Compile Include="Interfaces\IFileSystemEntry.cs" />
     <Compile Include="Interfaces\IDirectory.cs" />
@@ -63,6 +63,7 @@
     <Compile Include="IOHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migration\RenamedByExif.cs" />
+    <Compile Include="Palette.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

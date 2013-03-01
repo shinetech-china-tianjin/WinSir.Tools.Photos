@@ -5,7 +5,13 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public interface IFile : IFileSystemEntry
-    {
-    }
+	public interface IFile : IFileSystemEntry
+	{
+		string Extension{ get; }
+
+		IDirectory ParentDirectory{ get; }
+
+		IFile Rename (string newName);
+		void Delete();
+	}
 }
