@@ -11,7 +11,7 @@ namespace WinSir.Tools.Photos
 
         }
 
-        public Fluent.IO.Path Location {
+        public string Location {
             get { throw new NotImplementedException(); }
         }
 

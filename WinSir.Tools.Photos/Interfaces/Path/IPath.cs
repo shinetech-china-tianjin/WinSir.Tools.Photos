@@ -7,7 +7,7 @@ namespace WinSir.Tools.Photos
 {
     public interface IPath
     {
-        Fluent.IO.Path Location { get; }
+        string Location { get; }
 
         bool IsValid();
     }
