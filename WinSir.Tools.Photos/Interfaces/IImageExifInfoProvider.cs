@@ -1,12 +1,13 @@
-﻿using System;
+﻿using ExifLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace WinSir.Tools.Photos.Interfaces
 {
-    public interface IImageExifInfoProvider
+    public interface IImageExifInfoProvider : IFileType
     {
-        ExifLib.ExifTags ExifTags { get; }
+        T GetTagValue<T>(ExifTags tag);
     }
 }

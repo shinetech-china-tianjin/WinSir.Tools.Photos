@@ -50,8 +50,11 @@
     <Compile Include="DefaultFileInfoFactory.cs" />
     <Compile Include="DefaultDirectoryInfoFactory.cs" />
     <Compile Include="DirectoryProxy.cs" />
+    <Compile Include="EnumerableExtension.cs" />
     <Compile Include="FileProxy.cs" />
     <Compile Include="FluentIO.cs" />
+    <Compile Include="IFileType.cs" />
+    <Compile Include="ImageFileProxy.cs" />
     <Compile Include="Interfaces\Path\DirectoryPath.cs" />
     <Compile Include="Interfaces\Path\FilePath.cs" />
     <Compile Include="Interfaces\IFileSystemEntry.cs" />
