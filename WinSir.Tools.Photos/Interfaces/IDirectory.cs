@@ -12,5 +12,6 @@ namespace WinSir.Tools.Photos
 
 		IEnumerable<IDirectory> Directories{ get; }
 		IEnumerable<IFile> Files{ get; }
+		IEnumerable<IFile> AllFiles { get; }
 	}
 }

@@ -27,7 +27,7 @@ namespace WinSir.Tools.Photos
 		#region Behaviour
 
 		void Delete();
-		IFileSystemEntry MoveTo(DirectoryPath location);
+		IFileSystemEntry MoveTo(IEntryPath location);
 
 		#endregion
 	}

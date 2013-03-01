@@ -50,7 +50,7 @@
     <Compile Include="DefaultFileInfoFactory.cs" />
     <Compile Include="DefaultDirectoryInfoFactory.cs" />
     <Compile Include="DirectoryProxy.cs" />
-    <Compile Include="EnumerableExtension.cs" />
+    <Compile Include="EnumerableCommonExtension.cs" />
     <Compile Include="FileProxy.cs" />
     <Compile Include="FluentIO.cs" />
     <Compile Include="IFileType.cs" />
@@ -67,6 +67,8 @@
     <Compile Include="Migration\ClassifiedByDate.cs" />
     <Compile Include="IOExtensioin.cs" />
     <Compile Include="IOHelper.cs" />
+    <Compile Include="Motivations\ClassifiedByDate.cs" />
+    <Compile Include="Motivations\IMotivation.cs" />
     <Compile Include="OSEnvironment.cs" />
     <Compile Include="Interfaces\Path\EntryPathBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

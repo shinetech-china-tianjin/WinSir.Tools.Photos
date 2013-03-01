@@ -58,7 +58,7 @@ namespace WinSir.Tools.Photos
             return new FileProxy(destinationFilePath);
         }
 
-        public IFileSystemEntry MoveTo(DirectoryPath location) {
+        public IFileSystemEntry MoveTo(IEntryPath location) {
             throw new NotImplementedException();
         }
     }
