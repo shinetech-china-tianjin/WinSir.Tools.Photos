@@ -9,9 +9,7 @@ namespace WinSir.Tools.Photos
 	{
 		string Extension{ get; }
 
-		IDirectory ParentDirectory{ get; }
-
+		IDirectory ParentDirectory { get; }
 		IFile Rename (string newName);
-		void Delete();
 	}
 }

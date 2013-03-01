@@ -8,7 +8,6 @@ namespace WinSir.Tools.Photos
 		public Palette ()
 		{
 			var s = new DirectoryInfo ("");
-
 		}
 	}
 }
