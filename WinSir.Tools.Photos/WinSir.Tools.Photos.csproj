@@ -50,8 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DirectoryTruck.cs" />
-    <Compile Include="FileTruck.cs" />
+    <Compile Include="DirectoryProxy.cs" />
+    <Compile Include="FileProxy.cs" />
     <Compile Include="Interfaces\Path\DirectoryPath.cs" />
     <Compile Include="Interfaces\Path\FilePath.cs" />
     <Compile Include="Interfaces\IFileSystemEntry.cs" />

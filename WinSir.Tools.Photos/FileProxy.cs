@@ -6,12 +6,12 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-	public class FileTruck// : IFile
+	public class FileProxy// : IFile
 	{
 		private readonly string _filePath;
 		private readonly FileInfo _file;
 
-		internal FileTruck (string filePath)
+		internal FileProxy (string filePath)
 		{
 			_filePath = filePath;
 			InitializeFile (filePath);
@@ -37,7 +37,7 @@ namespace WinSir.Tools.Photos
 			get { throw new NotImplementedException (); }
 		}
 
-		public IDirectory ParentDirectory { get { return DirectoryTruck.FromDirectoryInfo(_file.Directory); } }
+		public IDirectory ParentDirectory { get { return DirectoryProxy.FromDirectoryInfo(_file.Directory); } }
 
 		public string DirectoryName { get { return _file.DirectoryName; } }
 

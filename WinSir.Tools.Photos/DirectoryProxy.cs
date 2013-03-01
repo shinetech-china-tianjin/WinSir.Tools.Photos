@@ -7,7 +7,7 @@ using System.IO.Abstractions;
 
 namespace WinSir.Tools.Photos
 {
-	public class DirectoryTruck// : System.IO.Abstractions.DirectoryInfoBase, IDirectory
+	public class DirectoryProxy// : System.IO.Abstractions.DirectoryInfoBase, IDirectory
 	{
 //		public DirectoryTruck (string directoryPath):base(new DirectoryInfo(directoryPath))
 //		{
