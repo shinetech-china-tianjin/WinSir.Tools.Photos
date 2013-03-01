@@ -8,19 +8,33 @@ namespace WinSir.Tools.Photos
 {
     internal class OSEnvironment
     {
-        internal PathBase PathHelper {
+        internal static OSEnvironment _current;
+
+        internal static OSEnvironment Current {
+            get {
+                if (_current == null) {
+                    _current = new OSEnvironment();
+                }
+                return _current;
+            }
+            set {
+                _current = value;
+            }
+        }
+
+        internal virtual PathBase PathHelper {
             get {
                 return new PathWrapper();
             }
         }
 
-        internal IFileInfoFactory FileInfoFactory {
+        internal virtual IFileInfoFactory FileInfoFactory {
             get {
                 return new DefaultFileInfoFactory();
             }
         }
 
-        internal IDirectoryInfoFactory DirectoryInfoFactory {
+        internal virtual IDirectoryInfoFactory DirectoryInfoFactory {
             get {
                 return new DefaultDirectoryInfoFactory();
             }

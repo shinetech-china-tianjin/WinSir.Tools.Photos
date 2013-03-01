@@ -9,5 +9,8 @@ namespace WinSir.Tools.Photos
 {
 	public class DirectoryProxy// : System.IO.Abstractions.DirectoryInfoBase, IDirectory
 	{
-	}
+        internal static IDirectory BuildByPath(DirectoryPath directoryPath) {
+            throw new NotImplementedException();
+        }
+    }
 }

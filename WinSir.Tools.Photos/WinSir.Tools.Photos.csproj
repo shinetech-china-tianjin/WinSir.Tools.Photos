@@ -51,6 +51,7 @@
     <Compile Include="DefaultDirectoryInfoFactory.cs" />
     <Compile Include="DirectoryProxy.cs" />
     <Compile Include="FileProxy.cs" />
+    <Compile Include="FluentIO.cs" />
     <Compile Include="Interfaces\Path\DirectoryPath.cs" />
     <Compile Include="Interfaces\Path\FilePath.cs" />
     <Compile Include="Interfaces\IFileSystemEntry.cs" />
