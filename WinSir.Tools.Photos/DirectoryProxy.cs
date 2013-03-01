@@ -12,5 +12,9 @@ namespace WinSir.Tools.Photos
         internal static IDirectory BuildByPath(DirectoryPath directoryPath) {
             throw new NotImplementedException();
         }
+
+        internal static IDirectory Build(DirectoryInfoBase directoryInfoBase) {
+            throw new NotImplementedException();
+        }
     }
 }

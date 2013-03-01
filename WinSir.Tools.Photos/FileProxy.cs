@@ -7,122 +7,51 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-	public class FileProxy : IFile
-	{
+    public class FileProxy : IFile
+    {
         private readonly FilePath _filePath;
-		private readonly FileInfoBase _fileInfo;
+        private readonly FileInfoBase _fileInfo;
 
-		internal FileProxy (FilePath filePath)
-		{
-			if (filePath == null) {
+        internal FileProxy(FilePath filePath) {
+            if (filePath == null) {
                 throw new ArgumentNullException("filePath");
-			}
+            }
 
             _filePath = filePath;
             _fileInfo = IOHelper.GetFileInfo(filePath);
-		}
-
-//		public IFileSystemEntry Rename (string newName)
-//		{
-//			IOHelper.FileRename (_filePath, newName);
-//
-//			var baseDirectory = Path.GetDirectoryName (_filePath);
-//			var newFilePath = Path.Combine (baseDirectory, newName);
-//			return new FileTruck (newFilePath);
-//		}
-
-        public string Extension {
-            get { throw new NotImplementedException(); }
         }
 
-        public bool IsReadOnly {
-            get { throw new NotImplementedException(); }
-        }
+        public string Extension { get { return _fileInfo.Extension; } }
 
-        public IDirectory ParentDirectory {
-            get { throw new NotImplementedException(); }
-        }
+        public bool IsReadOnly { get { return _fileInfo.IsReadOnly; } }
 
-        public IFile Rename(string newName) {
-            throw new NotImplementedException();
-        }
+        public IDirectory ParentDirectory { get { return DirectoryProxy.Build(_fileInfo.Directory); } }
 
-        public DateTime CreationTime {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
 
-        public DateTime CreationTimeUtc {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public DateTime CreationTime { get { return _fileInfo.CreationTime; } }
 
-        public DateTime LastAccessTime {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public DateTime CreationTimeUtc { get { return _fileInfo.CreationTimeUtc; } }
 
-        public DateTime LastAccessTimeUtc {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public DateTime LastAccessTime { get { return _fileInfo.LastAccessTime; } }
 
-        public DateTime LastWriteTime {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public DateTime LastAccessTimeUtc { get { return _fileInfo.LastAccessTimeUtc; } }
 
-        public DateTime LastWriteTimeUtc {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public DateTime LastWriteTime { get { return _fileInfo.LastWriteTime; } }
 
-        public long Size {
-            get { throw new NotImplementedException(); }
-        }
+        public DateTime LastWriteTimeUtc { get { return _fileInfo.LastWriteTimeUtc; } }
 
-        public string Name {
-            get { throw new NotImplementedException(); }
-        }
+        public long Size { get { return _fileInfo.Length; } }
 
-        public IPath FullPath {
-            get { throw new NotImplementedException(); }
-        }
+        public string Name { get { return _fileInfo.Name; } }
 
-        public FileAttributes Attributes {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public IPath FullPath { get { return FilePath.Create(_fileInfo.FullName); } }
+
+        public FileAttributes Attributes { get { return _fileInfo.Attributes; } }
 
         public void Delete() {
+            
+        }
+        public IFile Rename(string newName) {
             throw new NotImplementedException();
         }
 

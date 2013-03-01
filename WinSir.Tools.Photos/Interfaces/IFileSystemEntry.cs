@@ -10,17 +10,17 @@ namespace WinSir.Tools.Photos
 	{
 		#region Metadata Properties
 
-		DateTime CreationTime { get; set; }
-		DateTime CreationTimeUtc { get; set; }
-		DateTime LastAccessTime { get; set; }
-		DateTime LastAccessTimeUtc { get; set; }
-		DateTime LastWriteTime { get; set; }
-		DateTime LastWriteTimeUtc { get; set; }
+		DateTime CreationTime { get; }
+		DateTime CreationTimeUtc { get; }
+		DateTime LastAccessTime { get; }
+		DateTime LastAccessTimeUtc { get; }
+		DateTime LastWriteTime { get; }
+		DateTime LastWriteTimeUtc { get; }
 
 		long Size { get; }
 		string Name { get; }
 		IPath FullPath { get; }
-		FileAttributes Attributes { get; set; }
+		FileAttributes Attributes { get; }
 
 		#endregion
 

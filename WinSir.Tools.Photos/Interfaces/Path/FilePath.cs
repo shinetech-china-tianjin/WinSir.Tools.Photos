@@ -18,5 +18,9 @@ namespace WinSir.Tools.Photos
         public bool IsValid() {
             throw new NotImplementedException();
         }
+
+        internal static IPath Create(string p) {
+            throw new NotImplementedException();
+        }
     }
 }
