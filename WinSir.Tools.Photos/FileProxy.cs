@@ -12,6 +12,8 @@ namespace WinSir.Tools.Photos
         private readonly FilePath _filePath;
         private readonly FileInfoBase _fileInfo;
 
+        internal FileProxy(string filePath) : this(new FilePath(filePath)) { }
+
         internal FileProxy(FilePath filePath) {
             if (filePath == null) {
                 throw new ArgumentNullException("filePath");
@@ -49,10 +51,11 @@ namespace WinSir.Tools.Photos
         public FileAttributes Attributes { get { return _fileInfo.Attributes; } }
 
         public void Delete() {
-            
+            _fileInfo.Delete();
         }
         public IFile Rename(string newName) {
-            throw new NotImplementedException();
+            var destinationFilePath = IOHelper.FileRename(_fileInfo, newName);
+            return new FileProxy(destinationFilePath);
         }
 
         public IFileSystemEntry MoveTo(DirectoryPath location) {

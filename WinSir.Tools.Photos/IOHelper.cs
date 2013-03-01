@@ -9,9 +9,12 @@ namespace WinSir.Tools.Photos
 {
     internal class IOHelper
     {
-        internal static void FileRename(string originalFilePath, string newFileName) {
-            var oldFilePath = Path.GetDirectoryName(originalFilePath);
-            File.Move(originalFilePath, Path.Combine(oldFilePath, newFileName));
+        internal static string FileRename(FileInfoBase fileInfo, string newFileName) {
+            var originalFilePath = fileInfo.FullName;
+            var oldFilePath = Path.GetDirectoryName(fileInfo.FullName);
+            var destinationFilePath = Path.Combine(oldFilePath, newFileName);
+            File.Move(originalFilePath, destinationFilePath);
+            return destinationFilePath;
         }
 
         internal static FileInfoBase GetFileInfo(FilePath filePath) {
