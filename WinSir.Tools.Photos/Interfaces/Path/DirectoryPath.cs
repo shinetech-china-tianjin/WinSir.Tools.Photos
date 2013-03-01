@@ -5,17 +5,12 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public sealed class DirectoryPath : IPath
+    public sealed class DirectoryPath : EntryPathBase
     {
-        public DirectoryPath(string location) {
+        public DirectoryPath(string location)
+            : base(location) { }
 
-        }
-
-        public string Location {
-            get { throw new NotImplementedException(); }
-        }
-        
-        public bool IsValid() {
+        public override bool IsValid() {
             throw new NotImplementedException();
         }
     }

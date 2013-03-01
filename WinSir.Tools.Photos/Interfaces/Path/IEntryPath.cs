@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WinSir.Tools.Photos
 {
-    public interface IPath
+    public interface IEntryPath
     {
         string Location { get; }
 

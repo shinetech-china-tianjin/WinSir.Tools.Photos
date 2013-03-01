@@ -62,12 +62,13 @@
     <Compile Include="Interfaces\IFile.cs" />
     <Compile Include="Interfaces\IImageExifInfoProvider.cs" />
     <Compile Include="Interfaces\IImageFile.cs" />
-    <Compile Include="Interfaces\Path\IPath.cs" />
+    <Compile Include="Interfaces\Path\IEntryPath.cs" />
     <Compile Include="Migration\ExifManager.cs" />
     <Compile Include="Migration\ClassifiedByDate.cs" />
     <Compile Include="IOExtensioin.cs" />
     <Compile Include="IOHelper.cs" />
     <Compile Include="OSEnvironment.cs" />
+    <Compile Include="Interfaces\Path\EntryPathBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migration\RenamedByExif.cs" />
     <Compile Include="Palette.cs" />

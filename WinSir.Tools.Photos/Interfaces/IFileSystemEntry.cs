@@ -19,7 +19,7 @@ namespace WinSir.Tools.Photos
 
 		long Size { get; }
 		string Name { get; }
-		IPath FullPath { get; }
+		IEntryPath FullPath { get; }
 		FileAttributes Attributes { get; }
 
 		#endregion

@@ -44,7 +44,7 @@ namespace WinSir.Tools.Photos
 
         public string Name { get { return _fileInfo.Name; } }
 
-        public IPath FullPath { get { return FilePath.Create(_fileInfo.FullName); } }
+        public IEntryPath FullPath { get { return new FilePath(_fileInfo.FullName); } }
 
         public FileAttributes Attributes { get { return _fileInfo.Attributes; } }
 
