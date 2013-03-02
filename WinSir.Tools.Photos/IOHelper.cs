@@ -28,7 +28,12 @@ namespace WinSir.Tools.Photos
         }
 
         internal static IDirectory CreateDirectory(string directoryPath) {
-            throw new NotImplementedException();
+            var di = OSEnvironment.Current.DirectoryInfoFactory.FromDirectoryName(directoryPath);
+            if (!di.Exists) {
+                di.Create();
+            }
+
+            return new DirectoryProxy(directoryPath);
         }
     }
 }

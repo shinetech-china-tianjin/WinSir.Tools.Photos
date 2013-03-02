@@ -8,10 +8,11 @@ namespace WinSir.Tools.Photos
 	public interface IDirectory : IFileSystemEntry
 	{
 		IFile Rename (string newName);
-		IDirectory MoveTo(IEntryPath newPath);
 
 		IEnumerable<IDirectory> Directories{ get; }
 		IEnumerable<IFile> Files{ get; }
 		IEnumerable<IFile> AllFiles { get; }
+
+		IDirectory CreateDirectory(string directoryName);
 	}
 }

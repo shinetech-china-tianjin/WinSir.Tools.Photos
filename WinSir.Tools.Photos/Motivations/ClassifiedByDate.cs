@@ -6,14 +6,15 @@ using WinSir.Tools.Photos;
 
 namespace WinSir.Tools.Photos.Motivations
 {
-    public class ClassifiedByDate : IMotivation
+    public class ClassifiedByDate : MotivationBase
     {
+        private const string Undefined = "Undefined";
         private IDirectory _directory;
         public ClassifiedByDate(string location) {
             _directory = FluentIO.BeginFrom(location);
         }
 
-        public void Execute() {
+        public override void Execute() {
             _directory
                 .AllFiles
                 .ByFileType<IImageFile>()
@@ -33,10 +34,20 @@ namespace WinSir.Tools.Photos.Motivations
                 .Replace(".", ":")
                 .Replace("_", " ");
             if (DateTime.TryParse(parsedFileName, out datetime)) {
-                
+                var yearDirectory = datetime.Year.ToString();
+                var monthDirectory = datetime.Month.ToString();
+
+                var directoryName = Path.Combile(
+                    file.ParentDirectory.FullPath.Location,
+                    yearDirectory,
+                    monthDirectory);
+
+                return directoryName;
             }
 
-            throw new NotImplementedException();
+            return Path.Combine(
+                file.ParentDirectory.FullPath.Location, 
+                Undefined);
         }
     }
 }

@@ -68,8 +68,10 @@
     <Compile Include="IOHelper.cs" />
     <Compile Include="Motivations\ClassifiedByDate.cs" />
     <Compile Include="Motivations\IMotivation.cs" />
+    <Compile Include="Motivations\MotivationBase.cs" />
     <Compile Include="OSEnvironment.cs" />
     <Compile Include="Interfaces\Path\EntryPathBase.cs" />
+    <Compile Include="PathExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migration\RenamedByExif.cs" />
     <Compile Include="Palette.cs" />

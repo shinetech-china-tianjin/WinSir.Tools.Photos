@@ -27,7 +27,7 @@ namespace WinSir.Tools.Photos
 
         public bool IsReadOnly { get { return _fileInfo.IsReadOnly; } }
 
-        public IDirectory ParentDirectory { get { return DirectoryProxy.Build(_fileInfo.Directory); } }
+        public IDirectory ParentDirectory { get { return new DirectoryProxy(_fileInfo.Directory.FullName); } }
 
 
         public DateTime CreationTime { get { return _fileInfo.CreationTime; } }

@@ -13,7 +13,7 @@ namespace WinSir.Tools.Photos
                 throw new InvalidOperationException("Must begin from a directory.");
             }
 
-            return DirectoryProxy.BuildByPath(directoryPath);
+            return new DirectoryProxy(directoryPath);
         }
     }
 }
