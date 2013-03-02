@@ -16,30 +16,20 @@ namespace WinSir.Tools.Photos.Motivations
         public void Execute() {
             _directory
                 .AllFiles
-                .GroupBy(file => ParseYearFrom(file.Name))
-                .Map(yearFiles => {
-                    yearFiles.GroupBy(file => ParseMonthFrom(file.Name))
-                        .Map(monthFiles => {
-                            //var targetDirectory = IOHelper
-                            //    .CreateDirectoryUnder(_directory, directoryAndFiles.Key);
-                            //directoryAndFiles.Map(file =>
-                            //    file.MoveTo(targetDirectory.FullPath));
-                        });
+                .ByFileType<IImageFile>()
+                .GroupBy(file => ParseDirectoryName(file))
+                .Map(directoryFiles => {
+                    var targetDirectory = IOHelper
+                        .CreateDirectory(directoryFiles.Key);
+                    directoryFiles.Map(file =>
+                        file.MoveTo(targetDirectory.FullPath));
                 });
         }
 
-        private string ParseYearFrom(string filename) {
-            throw new NotImplementedException();
-        }
-
-        private string ParseMonthFrom(string filename) {
-            throw new NotImplementedException();
-        }
-
-        private string ParseFileNameThroughDateTime(string filename) {
+        private string ParseDirectoryName(IImageFile file) {
             DateTime datetime;
             var parsedFileName = OSEnvironment.Current.PathHelper
-                .GetFileNameWithoutExtension(filename)
+                .GetFileNameWithoutExtension(file.Name)
                 .Replace(".", ":")
                 .Replace("_", " ");
             if (DateTime.TryParse(parsedFileName, out datetime)) {

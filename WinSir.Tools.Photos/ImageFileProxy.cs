@@ -3,11 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using WinSir.Tools.Photos.Interfaces;
 
 namespace WinSir.Tools.Photos
 {
-    public class ImageFileProxy : FileProxy, IImageExifInfoProvider
+    public class ImageFileProxy : FileProxy, IImageFile
     {
         public ImageFileProxy(FilePath filePath) : base(filePath) { }
 

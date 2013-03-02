@@ -60,7 +60,6 @@
     <Compile Include="Interfaces\IFileSystemEntry.cs" />
     <Compile Include="Interfaces\IDirectory.cs" />
     <Compile Include="Interfaces\IFile.cs" />
-    <Compile Include="Interfaces\IImageExifInfoProvider.cs" />
     <Compile Include="Interfaces\IImageFile.cs" />
     <Compile Include="Interfaces\Path\IEntryPath.cs" />
     <Compile Include="Migration\ExifManager.cs" />

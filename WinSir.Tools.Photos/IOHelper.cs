@@ -27,7 +27,7 @@ namespace WinSir.Tools.Photos
             return directoryFactory.FromDirectoryName(directoryPath.Location);
         }
 
-        internal static IDirectory CreateDirectoryUnder(IDirectory _directory, string p) {
+        internal static IDirectory CreateDirectory(string directoryPath) {
             throw new NotImplementedException();
         }
     }
