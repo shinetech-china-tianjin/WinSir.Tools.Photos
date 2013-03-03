@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinSir.Tools.Photos.Shell",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinSir.Tools.Photos", "WinSir.Tools.Photos\WinSir.Tools.Photos.csproj", "{2111B108-FCDA-43A7-8E98-1FAA58EE3E90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinSir.Tools.Photos.Renamer", "WinSir.Tools.Photos.Renamer\WinSir.Tools.Photos.Renamer.csproj", "{55646FCA-5ECE-4A5E-BB23-12F949ECB5BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2111B108-FCDA-43A7-8E98-1FAA58EE3E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2111B108-FCDA-43A7-8E98-1FAA58EE3E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2111B108-FCDA-43A7-8E98-1FAA58EE3E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55646FCA-5ECE-4A5E-BB23-12F949ECB5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55646FCA-5ECE-4A5E-BB23-12F949ECB5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55646FCA-5ECE-4A5E-BB23-12F949ECB5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55646FCA-5ECE-4A5E-BB23-12F949ECB5BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

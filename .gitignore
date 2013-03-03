@@ -35,3 +35,5 @@ Log/
 
 packages/
 *.userprefs
+publish/
+*pfx
